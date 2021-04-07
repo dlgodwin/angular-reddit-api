@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<title>Reddit Assessment</title>
+
+	<!-- Style Sheets -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.5.0/css/font-awesome.min.css">
+
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/redditFrontPage/redditFrontPage.module.js"></script>
+	<script src="js/redditFrontPage/redditFrontPageCtrl.js"></script>
+	<script src="js/redditFrontPage/redditFrontPageService.js"></script>
+</head>
+
+<body>
+	<div class="container" ng-controller="RedditFrontPageCtrl">
+		<h1>Reddit Front Page Results</h1>
+		<div class="bs-component">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Front page sorted descending by up-votes...</h3>
+				</div>
+				<div class="panel-body">
+					<div class="table">
+						<div class="row reddit-results" ng-repeat="element in elements | orderBy:'-ups'">
+						
+							<div class="cell col-xs-12">
+								{{element.title}}
+							</div>
+							<div class="cell col-xs-2">
+								<a ng-href="http://reddit.com{{element.permalink}}" target="_blank">REDDIT LINK</a>
+							</div>
+							<div class="cell author col-xs-2">
+								{{element.author}}
+							</div>
+							<div class="cell col-xs-1">
+								<i class="fa fa-thumbs-up"></i>{{element.ups}}
+							</div>
+							<div class="cell col-xs-1">
+								<i class="fa fa-thumbs-down"></i>{{element.downs}}
+							</div>
+							<div class="cell col-xs-7"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

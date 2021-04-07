@@ -1,0 +1,20 @@
+.table {
+	display: table;
+	border: 1px solid #d3d3d3;
+}
+
+.row {
+	display: table-row;
+}
+
+.row:nth-child(even) {
+	background: #cce4f0;
+}
+
+.cell {
+	display: table-cell;
+}
+
+.author {
+	font-style: italic;
+}
